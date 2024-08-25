@@ -1,0 +1,152 @@
+.app-container {
+  @apply bg-zinc-50;
+}
+
+.todophp-layout.authView {
+  @apply container min-h-screen;
+  @apply grid;
+  grid-template-rows: auto 1fr;
+}
+
+.todophp-layout.noauthView {
+  @apply container min-h-screen;
+  @apply grid;
+
+  .todophp-login-account.form,
+  .todophp-new-account.form {
+    @apply w-[60ch] p-10 mx-auto;
+    @apply bg-white;
+  }
+}
+
+.todophp-home {
+
+  .todophp-home.content {
+    @apply grid gap-6 lg:grid-cols-default;
+    @apply min-h-screen;
+
+    .content.sidebar {
+      @apply p-4;
+      @apply max-w-[250px] w-[250px];
+      @apply hidden lg:grid;
+      @apply rounded-lg;
+      @apply bg-white;
+      @apply shadow-lg;
+    }
+
+    .content.sections {
+      @apply p-4;
+      @apply rounded-lg;
+      @apply bg-white;
+      @apply shadow-lg;
+    }
+  }
+
+  .dashboard > .dashboard-desktop {
+    @apply hidden lg:grid;
+  }
+
+  .dashboard-desktop > .desktop.nav {
+    @apply flex justify-between items-center;
+  }
+
+  .dashboard-desktop > .desktop.content {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  .todophp-home.filter {
+    @apply mb-5 p-3 rounded-lg;
+    @apply bg-white shadow;
+
+    > .filter.form {
+      @apply grid grid-cols-2;
+
+      .search-wrapper {
+        @apply grid gap-2;
+
+        grid-template-columns: 1fr auto;
+      }
+    }
+
+  }
+
+  .ongoing-view > .ongoing-view.tasks,
+  .done-view > .done-view.tasks {
+    @apply grid gap-4;
+  }
+
+  .ongoing-view > .ongoing-view.headline,
+  .done-view > .done-view.headline {
+    @apply my-4 font-semibold;
+  }
+
+  .ongoing-view.tasks .item > .item-content .item-content.header,
+  .done-view.tasks .item > .item-content .item-content.header {
+    @apply p-3;
+  }
+
+  .ongoing-view.tasks .item > .item-content .item-content.list,
+  .done-view.tasks .item > .item-content .item-content.list {
+    & > nav {
+      @apply flex justify-between items-center;
+    }
+
+    & h2.list.title {
+      @apply text-sm font-semibold;
+      @apply mb-1 px-3;
+    }
+
+    & ul.list.actions {
+      @apply flex;
+    }
+
+    & > .item-content.list {
+      @apply px-3 my-4;
+      @apply grid gap-1;
+    }
+
+    & > .item-content.list .list-item.content {
+      @apply grid gap-2;
+      grid-template-columns: auto 1fr auto;
+    }
+  }
+
+  .ongoing-view.tasks .item > .item-content .item-content.footer,
+  .done-view.tasks .item > .item-content .item-content.footer {
+    @apply p-3 grid justify-end;
+    @apply text-zinc-600;
+  }
+  
+  .dashboard > .dashboard-mobile {
+    @apply grid lg:hidden;
+  }
+
+}
+
+.form.todos {
+  
+  .todos.scrollArea {
+    @apply h-[50ch] w-full;
+  }
+
+  .todos.scrollArea .todos.items {
+    @apply grid gap-1 mt-4;
+  }
+
+  .todos.scrollArea .todos.items > .item {
+    @apply border rounded-md p-4 shadow;
+  }
+
+  .todos.scrollArea .todos.items > .item > .nav {
+    @apply flex justify-between items-center;
+
+    h4 {
+      @apply font-semibold;
+    }
+  }
+
+  .todos.scrollArea .todos.items > button {
+    @apply mb-4;
+  }
+
+}
